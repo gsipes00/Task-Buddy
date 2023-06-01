@@ -258,7 +258,7 @@ ul {
   width: 90vw;
   margin: 0 auto;
   margin-top: 8rem;
-  max-width: 30rem;
+  max-width: 40rem;
   background: var(--white);
   border-radius: var(--borderRadius);
   padding: 2rem;
@@ -275,9 +275,14 @@ form h4 {
 }
 .form-control {
   display: grid;
-  grid-template-columns: 1fr 100px;
+  grid-template-columns: 1fr 2fr 100px;
 }
 .form-input {
+  border-radius: 0;
+  border-top-left-radius: var(--borderRadius);
+  border-bottom-left-radius: var(--borderRadius);
+}
+.form-input-desc {
   border-radius: 0;
   border-top-left-radius: var(--borderRadius);
   border-bottom-left-radius: var(--borderRadius);

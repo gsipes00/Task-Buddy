@@ -27,7 +27,7 @@ const Form = ({ addItem }) => {
           onChange={(event) => setNewItemName(event.target.value)}
         />
         <input
-          className='form-input'
+          className='form-input-desc'
           type='text'
           value={descItem}
           onChange={(event) => setDescItem(event.target.value)}
