@@ -23,7 +23,6 @@ const SingleItem = ({
             textTransform: "capitalize",
             textDecoration: item.completed && "line-through",
           }}
-          onClick={() => setIsDescVisible(!isDescVisible)}
         >
           {item.name}
         </p>
@@ -32,7 +31,7 @@ const SingleItem = ({
           type='button'
           onClick={() => setIsDescVisible(!isDescVisible)}
         >
-          add desc
+          Description
         </button>
         <button
           className='btn remove-btn'

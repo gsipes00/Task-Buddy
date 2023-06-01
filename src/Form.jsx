@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 const Form = ({ addItem }) => {
   const [newItemName, setNewItemName] = useState("");
+  const [descItem, setDescItem] = useState("");
 
   // handle submit
   const handleSubmit = (e) => {
@@ -10,8 +11,9 @@ const Form = ({ addItem }) => {
       toast.error("please include a value");
       return;
     }
-    addItem(newItemName);
+    addItem(newItemName, descItem);
     setNewItemName("");
+    setDescItem("");
   };
 
   return (
@@ -23,6 +25,12 @@ const Form = ({ addItem }) => {
           type='text'
           value={newItemName}
           onChange={(event) => setNewItemName(event.target.value)}
+        />
+        <input
+          className='form-input'
+          type='text'
+          value={descItem}
+          onChange={(event) => setDescItem(event.target.value)}
         />
         <button type='submit' className='btn'>
           add item

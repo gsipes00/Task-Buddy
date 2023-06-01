@@ -9,8 +9,8 @@ const DescForm = ({ editItemDesc }) => {
       return;
     }
     editItemDesc();
-    // not sure what to do here. left off here. 
-    onClick={() => editItemDesc(item.id)}
+    // not sure what to do here. left off here.
+    // onClick={() => editItemDesc(item.id)}
     setNewDesc("");
     console.log(newDesc);
   };

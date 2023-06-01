@@ -27,12 +27,12 @@ const App = () => {
   const [isDescFormVisible, setIsDescFormVisible] = useState(false);
 
   // add item function
-  const addItem = (itemName) => {
+  const addItem = (itemName, desc) => {
     const newItem = {
       name: itemName,
       completed: false,
       id: nanoid(),
-      description: "make sure to sweep the floor",
+      description: desc ? desc : "no description provided",
     };
     const newItems = [...items, newItem];
     setItems(newItems);
