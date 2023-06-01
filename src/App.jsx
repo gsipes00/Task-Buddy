@@ -4,17 +4,6 @@ import { nanoid } from "nanoid";
 import { ToastContainer, toast } from "react-toastify";
 import Items from "./Items";
 
-// get items from local storage
-const getLocalStorage = () => {
-  let list = localStorage.getItem("list");
-  if (list) {
-    list = JSON.parse(localStorage.getItem("list"));
-  } else {
-    list = [];
-  }
-  return list;
-};
-
 // add items to local storage
 const setLocalStorage = (items) => {
   // set item in local storage and stringify the entire object in an array
@@ -24,7 +13,6 @@ const defaultList = JSON.parse(localStorage.getItem("list") || "[]");
 
 const App = () => {
   const [items, setItems] = useState(defaultList);
-  const [isDescFormVisible, setIsDescFormVisible] = useState(false);
 
   // add item function
   const addItem = (itemName, desc) => {
@@ -36,7 +24,6 @@ const App = () => {
     };
     const newItems = [...items, newItem];
     setItems(newItems);
-    // do something with local storage
     setLocalStorage(newItems);
     toast.success("chore added to list");
   };
@@ -66,12 +53,7 @@ const App = () => {
     <section className='section-center'>
       <ToastContainer position='top-center' />
       <Form addItem={addItem} />
-      <Items
-        items={items}
-        removeItem={removeItem}
-        editItem={editItem}
-        isDescFormVisible={isDescFormVisible}
-      />
+      <Items items={items} removeItem={removeItem} editItem={editItem} />
     </section>
   );
 };

@@ -1,13 +1,7 @@
 import { useState } from "react";
 import Description from "./Description";
 
-const SingleItem = ({
-  item,
-  removeItem,
-  editItem,
-
-  isDescFormVisible,
-}) => {
+const SingleItem = ({ item, removeItem, editItem }) => {
   const [isDescVisible, setIsDescVisible] = useState(false);
 
   return (
