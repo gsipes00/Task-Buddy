@@ -38,7 +38,7 @@ const App = () => {
     setItems(newItems);
     // do something with local storage
     setLocalStorage(newItems);
-    toast.success("item added to list");
+    toast.success("chore added to list");
   };
 
   // remove item function
@@ -46,7 +46,7 @@ const App = () => {
     const newItems = items.filter((item) => item.id !== itemId);
     setItems(newItems);
     setLocalStorage(newItems);
-    toast.success("item deleted");
+    toast.success("chore deleted");
   };
 
   // edit item function
@@ -61,22 +61,6 @@ const App = () => {
     setItems(newItems);
     setLocalStorage(newItems);
   };
-  // edit Desc item function
-  const editItemDesc = (itemId) => {
-    const newItems = items.map((item) => {
-      if (item.id === itemId) {
-        const newItem = {
-          ...item,
-          description: itemId.description,
-        };
-        return newItem;
-      }
-      return item;
-    });
-    setItems(newItems);
-    setLocalStorage(newItems);
-    setIsDescFormVisible(!isDescFormVisible);
-  };
 
   return (
     <section className='section-center'>
@@ -86,7 +70,6 @@ const App = () => {
         items={items}
         removeItem={removeItem}
         editItem={editItem}
-        editItemDesc={editItemDesc}
         isDescFormVisible={isDescFormVisible}
       />
     </section>

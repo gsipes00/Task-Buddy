@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Description from "./Description";
-import DescForm from "./DescForm";
+
 const SingleItem = ({
   item,
   removeItem,
   editItem,
-  editItemDesc,
+
   isDescFormVisible,
 }) => {
   const [isDescVisible, setIsDescVisible] = useState(false);
@@ -42,11 +42,6 @@ const SingleItem = ({
         </button>
       </div>
       {isDescVisible ? <Description item={item} /> : ""}
-      {isDescFormVisible ? (
-        <DescForm item={item} editItemDesc={editItemDesc} />
-      ) : (
-        ""
-      )}
     </section>
   );
 };

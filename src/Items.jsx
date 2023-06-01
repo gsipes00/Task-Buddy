@@ -3,7 +3,7 @@ const Items = ({
   items,
   removeItem,
   editItem,
-  editItemDesc,
+
   isDescFormVisible,
 }) => {
   return (
@@ -15,7 +15,6 @@ const Items = ({
             item={item}
             removeItem={removeItem}
             editItem={editItem}
-            editItemDesc={editItemDesc}
             isDescFormVisible={isDescFormVisible}
           />
         );

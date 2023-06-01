@@ -18,22 +18,24 @@ const Form = ({ addItem }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h4>Grocery Bud</h4>
+      <h4>chore buddy</h4>
       <div className='form-control'>
         <input
           className='form-input'
           type='text'
           value={newItemName}
           onChange={(event) => setNewItemName(event.target.value)}
+          placeholder='add chore here'
         />
         <input
           className='form-input-desc'
           type='text'
           value={descItem}
           onChange={(event) => setDescItem(event.target.value)}
+          placeholder='briefly describe chore'
         />
         <button type='submit' className='btn'>
-          add item
+          add chore
         </button>
       </div>
     </form>
